@@ -1,6 +1,12 @@
 <section class="testimonial" data-state="collapsed">
-    <blockquote class="quote">${quote}</blockquote>
-    <p class="author">${author}</p>
-    <p class="company">${company}</p>
+    <div class="testimonial-content">
+        <img class="avatar" src="${avatar}" alt="${author}'s photo" loading="lazy" />
+        <div>
+            <blockquote class="quote">${quote}</blockquote>
+            <p class="author">${author}</p>
+            <p class="company">${company}</p>
+            <a class="cta" href="${ctaUrl}" target="_blank" rel="noopener">${ctaText}</a>
+        </div>
+    </div>
     <button class="expand-toggle">Read More</button>
 </section>

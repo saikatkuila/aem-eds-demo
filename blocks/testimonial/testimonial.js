@@ -1,5 +1,4 @@
 export default function decorate(block) {
-  // Ensure testimonial class is present
   block.classList.add('testimonial');
 
   const toggle = block.querySelector('.expand-toggle');
@@ -11,8 +10,16 @@ export default function decorate(block) {
     });
   }
 
-  // Optional: scroll into view on hover for accessibility
-  block.addEventListener('mouseenter', () => {
-    block.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  });
+  // Optional: auto-slide if multiple testimonials on page
+  const allTestimonials = document.querySelectorAll('.testimonial');
+  if (allTestimonials.length > 1) {
+    let index = 0;
+    setInterval(() => {
+      allTestimonials.forEach((el, i) => {
+        el.style.opacity = i === index ? '1' : '0.3';
+        el.style.transition = 'opacity 0.6s ease';
+      });
+      index = (index + 1) % allTestimonials.length;
+    }, 6000);
+  }
 }

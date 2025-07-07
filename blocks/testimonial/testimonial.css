@@ -1,28 +1,42 @@
 .testimonial {
-  background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
-  border-left: 6px solid #0097a7;
+  background: linear-gradient(135deg, #e3f2fd, #f1f8e9);
+  border-left: 6px solid #2196f3;
   padding: 2rem;
   border-radius: 1rem;
-  margin: 2rem 0;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  margin: 2rem auto;
+  max-width: 800px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
   position: relative;
   overflow: hidden;
-  max-width: 800px;
 }
 
 .testimonial:hover {
   transform: scale(1.01);
 }
 
+.testimonial .testimonial-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.testimonial .avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
 .testimonial blockquote {
-  font-size: 1.25rem;
-  line-height: 1.6;
+  font-size: 1.2rem;
   font-style: italic;
   color: #333;
   max-height: 100px;
   overflow: hidden;
   transition: max-height 0.3s ease;
+  margin: 0;
 }
 
 .testimonial[data-state="expanded"] blockquote {
@@ -31,18 +45,18 @@
 
 .testimonial .author {
   font-weight: bold;
-  color: #004d40;
   margin-top: 1rem;
+  color: #0d47a1;
 }
 
 .testimonial .company {
-  color: #666;
   font-size: 0.9rem;
+  color: #666;
 }
 
 .testimonial .expand-toggle {
   margin-top: 1rem;
-  background-color: #0097a7;
+  background-color: #2196f3;
   border: none;
   color: white;
   padding: 0.5rem 1rem;
@@ -52,17 +66,38 @@
 }
 
 .testimonial .expand-toggle:hover {
-  background-color: #006064;
+  background-color: #1565c0;
+}
+
+.testimonial .cta {
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: #2196f3;
+  text-decoration: underline;
+  font-size: 0.95rem;
 }
 
 @media (prefers-color-scheme: dark) {
   .testimonial {
     background: #263238;
-    color: #eee;
-    border-left-color: #80deea;
+    color: #eceff1;
+    border-left-color: #64b5f6;
   }
-  .testimonial .expand-toggle {
-    background-color: #80deea;
-    color: #000;
+
+  .testimonial blockquote {
+    color: #ccc;
+  }
+
+  .testimonial .author {
+    color: #90caf9;
+  }
+
+  .testimonial .company {
+    color: #bbb;
+  }
+
+  .testimonial .expand-toggle,
+  .testimonial .cta {
+    color: #64b5f6;
   }
 }
