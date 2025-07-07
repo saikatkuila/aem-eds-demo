@@ -12,7 +12,7 @@ import {
   loadCSS,
 } from './aem.js';
 
-import { decorateBlocks } from '../scripts/lib-franklin.js';
+
 
 /**
  * Moves all the attributes from a given elmenet to another given element.
@@ -148,7 +148,16 @@ async function loadPage() {
 
 loadPage();
 
-export async function loadBlocks(container) {
+function decorateBlocks(main) {
+  main.querySelectorAll('div[class]').forEach((block) => {
+    const classes = Array.from(block.classList);
+    if (classes.length > 0 && !block.classList.contains('block')) {
+      block.classList.add('block');
+    }
+  });
+}
+
+async function loadBlocks(container) {
   const blocks = Array.from(container.querySelectorAll('div.block'));
   blocks.forEach((block) => {
     const blockName = block.classList[0];
@@ -158,11 +167,11 @@ export async function loadBlocks(container) {
           mod.default(block);
         }
       })
-      .catch(() => {}); // Ignore if block JS doesn't exist
+      .catch(() => {});
   });
 }
 
-export default async function decoratePage() {
+async function decoratePage() {
   const main = document.querySelector('main');
   if (main) {
     decorateBlocks(main);
@@ -170,4 +179,5 @@ export default async function decoratePage() {
   }
 }
 
-decoratePage(); // ✅ This line ensures blocks are initialized on load
+decoratePage();
+
