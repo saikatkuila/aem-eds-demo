@@ -1,11 +1,42 @@
 .testimonial {
-  border-left: 4px solid #ccc;
-  padding-left: 1rem;
-  margin: 1rem 0;
+  background-color: #f9f9f9;
+  border-left: 5px solid #00bcd4;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 8px;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
-.testimonial .author {
-  font-weight: bold;
+
+.testimonial:hover {
+  transform: translateY(-2px);
 }
-.testimonial .company {
+
+.testimonial blockquote {
+  font-size: 1.25rem;
   font-style: italic;
+  color: #333;
+  margin: 0 0 1rem 0;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.testimonial blockquote::before {
+  content: "“";
+  font-size: 3rem;
+  color: #00bcd4;
+  position: absolute;
+  left: 0;
+  top: -10px;
+}
+
+.testimonial .author {
+  font-weight: 600;
+  color: #222;
+}
+
+.testimonial .company {
+  font-size: 0.9rem;
+  color: #777;
 }
