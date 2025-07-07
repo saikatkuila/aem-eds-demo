@@ -12,6 +12,8 @@ import {
   loadCSS,
 } from './aem.js';
 
+import { decorateBlocks } from '../scripts/lib-franklin.js';
+
 /**
  * Moves all the attributes from a given elmenet to another given element.
  * @param {Element} from the element to copy attributes from
@@ -145,3 +147,27 @@ async function loadPage() {
 }
 
 loadPage();
+
+export async function loadBlocks(container) {
+  const blocks = Array.from(container.querySelectorAll('div.block'));
+  blocks.forEach((block) => {
+    const blockName = block.classList[0];
+    import(`/blocks/${blockName}/${blockName}.js`)
+      .then((mod) => {
+        if (typeof mod.default === 'function') {
+          mod.default(block);
+        }
+      })
+      .catch(() => {}); // Ignore if block JS doesn't exist
+  });
+}
+
+export default async function decoratePage() {
+  const main = document.querySelector('main');
+  if (main) {
+    decorateBlocks(main);
+    await loadBlocks(main);
+  }
+}
+
+decoratePage(); // ✅ This line ensures blocks are initialized on load
