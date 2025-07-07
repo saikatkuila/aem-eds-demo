@@ -241,8 +241,9 @@
       { "component": "text", "name": "company", "label": "Company" },
       { "component": "richtext", "name": "quote", "label": "Quote" },
       { "component": "text", "name": "avatar", "label": "Avatar Image URL" },
-      { "component": "text", "name": "ctaText", "label": "CTA Text (Optional)" },
-      { "component": "text", "name": "ctaUrl", "label": "CTA URL (Optional)" }
+      { "component": "text", "name": "ctaText", "label": "CTA Text" },
+      { "component": "text", "name": "ctaUrl", "label": "CTA URL" },
+      { "component": "text", "name": "authorInitials", "label": "Author Initials (optional)" }
     ]
   }
 

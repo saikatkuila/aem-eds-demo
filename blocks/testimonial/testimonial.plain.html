@@ -1,12 +1,15 @@
-<section class="testimonial" data-state="collapsed">
+<section class="testimonial" itemscope itemtype="https://schema.org/Review" data-state="collapsed">
     <div class="testimonial-content">
-        <img class="avatar" src="${avatar}" alt="${author}'s photo" loading="lazy" />
+        <div class="avatar-container">
+            <img class="avatar" src="${avatar}" alt="${author}'s photo" loading="lazy" onerror="this.style.display='none';" />
+            <div class="avatar-fallback" aria-hidden="true">${authorInitials}</div>
+        </div>
         <div>
-            <blockquote class="quote">${quote}</blockquote>
-            <p class="author">${author}</p>
-            <p class="company">${company}</p>
-            <a class="cta" href="${ctaUrl}" target="_blank" rel="noopener">${ctaText}</a>
+            <blockquote class="quote" itemprop="reviewBody">${quote}</blockquote>
+            <p class="author" itemprop="author">${author}</p>
+            <p class="company" itemprop="publisher">${company}</p>
+            <a class="cta" href="${ctaUrl}" target="_blank" rel="noopener noreferrer">${ctaText}</a>
         </div>
     </div>
-    <button class="expand-toggle">Read More</button>
+    <button class="expand-toggle" aria-expanded="false">Read More</button>
 </section>
