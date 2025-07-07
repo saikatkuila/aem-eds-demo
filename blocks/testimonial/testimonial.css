@@ -1,17 +1,18 @@
 .testimonial {
   padding: 2rem;
-  background: #f9f9f9;
-  border-left: 4px solid #005a9c;
+  border-left: 4px solid #0074e4;
+  background-color: #f0f4f8;
   font-style: italic;
 }
 
-.testimonial-author {
-  margin-top: 1rem;
+.testimonial .author {
   font-weight: bold;
-  color: #333;
+  margin-top: 1rem;
+  color: #222;
 }
 
-.testimonial-designation {
-  color: #777;
+.testimonial .title {
   font-size: 0.9rem;
+  color: #555;
 }
+

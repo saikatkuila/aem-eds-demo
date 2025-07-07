@@ -180,7 +180,7 @@
           "plugins": {
             "xwalk": {
               "page": {
-                "resourceType": "aemeds/components/testimonial",
+                "resourceType": "eds/components/testimonial",
                 "template": {
                   "name": "Testimonial",
                   "model": "testimonial",
