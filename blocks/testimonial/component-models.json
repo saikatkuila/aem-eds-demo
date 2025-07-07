@@ -4,20 +4,17 @@
     {
       "component": "richtext",
       "name": "quote",
-      "label": "Quote",
-      "required": true
+      "label": "Testimonial Text"
     },
     {
       "component": "text",
       "name": "author",
-      "label": "Author",
-      "required": false
+      "label": "Author"
     },
     {
       "component": "text",
-      "name": "title",
-      "label": "Author Title",
-      "required": false
+      "name": "company",
+      "label": "Company"
     }
   ]
 }

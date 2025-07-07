@@ -233,27 +233,6 @@
          "value": ""
        }
      ]
-  },
-  {
-    "id": "testimonial",
-    "fields": [
-      {
-        "component": "richtext",
-        "name": "quote",
-        "label": "Quote",
-        "required": true
-      },
-      {
-        "component": "text",
-        "name": "author",
-        "label": "Author Name"
-      },
-      {
-        "component": "text",
-        "name": "designation",
-        "label": "Designation"
-      }
-    ]
   }
 
 ]
