@@ -1,53 +1,68 @@
 .testimonial {
-  background-color: #f9f9f9;
-  border-left: 5px solid #00bcd4;
-  padding: 1.5rem;
+  background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+  border-left: 6px solid #0097a7;
+  padding: 2rem;
+  border-radius: 1rem;
   margin: 2rem 0;
-  border-radius: 8px;
-  font-family: 'Segoe UI', sans-serif;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, opacity 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  max-width: 800px;
 }
 
 .testimonial:hover {
-  transform: translateY(-2px);
+  transform: scale(1.01);
 }
 
 .testimonial blockquote {
   font-size: 1.25rem;
+  line-height: 1.6;
   font-style: italic;
   color: #333;
-  margin: 0 0 1rem 0;
-  position: relative;
-  padding-left: 1.2rem;
+  max-height: 100px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
 }
 
-.testimonial blockquote::before {
-  content: "“";
-  font-size: 3rem;
-  color: #00bcd4;
-  position: absolute;
-  left: 0;
-  top: -10px;
+.testimonial[data-state="expanded"] blockquote {
+  max-height: 1000px;
 }
 
 .testimonial .author {
-  font-weight: 600;
-  color: #222;
+  font-weight: bold;
+  color: #004d40;
+  margin-top: 1rem;
 }
 
 .testimonial .company {
+  color: #666;
   font-size: 0.9rem;
-  color: #777;
-}
-.testimonial {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease-out;
 }
 
-.testimonial.fade-in {
-  opacity: 1;
-  transform: translateY(0);
+.testimonial .expand-toggle {
+  margin-top: 1rem;
+  background-color: #0097a7;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
+.testimonial .expand-toggle:hover {
+  background-color: #006064;
+}
+
+@media (prefers-color-scheme: dark) {
+  .testimonial {
+    background: #263238;
+    color: #eee;
+    border-left-color: #80deea;
+  }
+  .testimonial .expand-toggle {
+    background-color: #80deea;
+    color: #000;
+  }
+}
