@@ -180,10 +180,10 @@
           "plugins": {
             "xwalk": {
               "page": {
-                "resourceType": "eds/components/testimonial",
+                "resourceType": "aem-eds-demo/components/testimonial",
                 "template": {
                   "name": "Testimonial",
-                  "model": "testimonial",
+                  "model": "/models/testimonial.model.json",
                   "url": "/blocks/testimonial/testimonial.plain.html"
                 }
               }

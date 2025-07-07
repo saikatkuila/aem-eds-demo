@@ -1,0 +1,20 @@
+{
+  "id": "testimonial",
+  "fields": [
+    {
+      "component": "richtext",
+      "name": "quote",
+      "label": "Quote"
+    },
+    {
+      "component": "text",
+      "name": "author",
+      "label": "Author"
+    },
+    {
+      "component": "text",
+      "name": "company",
+      "label": "Company"
+    }
+  ]
+}
