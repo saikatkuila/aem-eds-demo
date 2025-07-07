@@ -173,6 +173,22 @@
               }
             }
           }
+        },
+        {
+          "id": "testimonial",
+          "title": "Testimonial",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "aemeds/components/testimonial",
+                "template": {
+                  "name": "Testimonial",
+                  "model": "testimonial",
+                  "url": "/blocks/testimonial/testimonial.plain.html"
+                }
+              }
+            }
+          }
         }
       ]
     }
