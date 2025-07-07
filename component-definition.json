@@ -173,22 +173,6 @@
               }
             }
           }
-        },
-        {
-          "id": "testimonial",
-          "title": "Testimonial",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "aem-eds-demo/components/testimonial",
-                "template": {
-                  "name": "Testimonial",
-                  "model": "/models/testimonial.model.json",
-                  "url": "/blocks/testimonial/testimonial.plain.html"
-                }
-              }
-            }
-          }
         }
       ]
     }

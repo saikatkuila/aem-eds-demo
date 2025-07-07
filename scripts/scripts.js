@@ -148,36 +148,5 @@ async function loadPage() {
 
 loadPage();
 
-function decorateBlocks(main) {
-  main.querySelectorAll('div[class]').forEach((block) => {
-    const classes = Array.from(block.classList);
-    if (classes.length > 0 && !block.classList.contains('block')) {
-      block.classList.add('block');
-    }
-  });
-}
 
-async function loadBlocks(container) {
-  const blocks = Array.from(container.querySelectorAll('div.block'));
-  blocks.forEach((block) => {
-    const blockName = block.classList[0];
-    import(`/blocks/${blockName}/${blockName}.js`)
-      .then((mod) => {
-        if (typeof mod.default === 'function') {
-          mod.default(block);
-        }
-      })
-      .catch(() => {});
-  });
-}
-
-async function decoratePage() {
-  const main = document.querySelector('main');
-  if (main) {
-    decorateBlocks(main);
-    await loadBlocks(main);
-  }
-}
-
-decoratePage();
 
